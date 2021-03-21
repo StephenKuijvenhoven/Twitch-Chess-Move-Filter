@@ -8,3 +8,7 @@ Go from
 to
 
 ![alt text](https://i.imgur.com/Bqf5xzR.png)
+
+## Todo list
+    - Filter per stream
+    - Show the move spoiler by clicking it
