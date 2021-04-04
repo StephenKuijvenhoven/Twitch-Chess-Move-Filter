@@ -1,11 +1,9 @@
 function save_options() {
     var moves = document.getElementById('moves').checked;
     var terms = document.getElementById('terms').checked;
-    var retroactively = document.getElementById('retroactively').checked;
     chrome.storage.local.set({
       chessMoves: moves,
       chessTerms: terms,
-      retroActive: retroactively
     }, function() {
     });
   }
