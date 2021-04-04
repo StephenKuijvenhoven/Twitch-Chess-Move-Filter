@@ -1,14 +1,24 @@
+![Logo](/src/icon128.png?raw=true)
 # Twitch-Chess-Move-Filter
-A simple chrome plugin for filtering chess moves from the Twitch chat
+A simple chrome plugin for filtering chess moves from the Twitch chat.
+Please take note that this is my first ever browser plugin, so feel free
+to open issues for improvements. 
 
 Go from
 
-![alt text](https://i.imgur.com/K2aeWta.png)
+![Before](https://i.imgur.com/cmreATc.png)
 
 to
 
-![alt text](https://i.imgur.com/Bqf5xzR.png)
+![After](https://i.imgur.com/39LCdxO.png)
+
+Hoves over the spoilers to see the moves
+
+![Hover](https://i.imgur.com/wBeOVQ6.png)
 
 ## Todo list
+    - Support for Firefox
     - Filter per stream
-    - Show the move spoiler by clicking it
+    - Support for different websites
+    - Support for different languages
+    - Clear all spoilers
