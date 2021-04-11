@@ -4,12 +4,11 @@ const chat = document.getElementsByClassName('chat-scrollable-area__message-cont
 
 
 var regexMoves = new RegExp(/((?:(?:O-O[-O]?)|(?:[KQNBRkqnbr][a-h]?x?[a-h]x?[1-8])|(?:[a-hA-H]x?[a-hA-H]?[1-8]))\+?)\#?/g, 'gi')
-var regexTerms = new RegExp(/\b(king|queen|rook|bishop|knight|horse|pawn|pawns|pin|fork|check|mate|checkmate|skewer|zugzwang|push|takes|diagonal)\b/g, 'gi')
+var regexTerms = new RegExp(/\b(king|queens?|rooks?|bishops?|knights?|horses?|pawns?|pins?|forks?|checks?|mate|checkmate|skewer|zugzwang|push|takes?|diagonals?|blunders?)\b/g, 'gi')
 
-var mutationConfig = {attributes: true, childList: true, subtree: true};
+var mutationConfig = {childList: true};
 
 var selectedRegEx;
-var previous_index = 0;
 
 function addObserverIfDesiredNodeAvailable() {
   if(chat.length == 0) {
@@ -27,10 +26,9 @@ const callback = function(mutationsList, observer) {
       if (mutation.type === 'childList') {
         if(mutation.target.getElementsByClassName('text-fragment').length !=0){
           var newestMessage = mutation.target.getElementsByClassName('text-fragment')[mutation.target.getElementsByClassName('text-fragment').length-1].innerHTML
-          if(!newestMessage.startsWith('<')){
+          if(!newestMessage.includes('<a class="chessspoiler">')){
             if(selectedRegEx!= null){ 
               mutation.target.getElementsByClassName('text-fragment')[mutation.target.getElementsByClassName('text-fragment').length-1].innerHTML = newestMessage.replace(selectedRegEx, function(x){
-              console.log('found ' + x)
               return x = '<a class="chessspoiler">[♞ spoiler] <span class="chessspoilertext"> ' + x + '</span></a>';
             })
           }
