@@ -18,7 +18,9 @@ Hover over the spoilers to see the moves
 
 ## How to install
 
-### From the [Chrome store](https://chrome.google.com/webstore/detail/twitch-chess-move-filter/ncdnlcgchccplihcjhkcieaebhkjkjof) (Chrome)   
+### From the [Chrome store](https://chrome.google.com/webstore/detail/twitch-chess-move-filter/ncdnlcgchccplihcjhkcieaebhkjkjof)
+
+### From the [Firefox Add-on page](https://addons.mozilla.org/nl/firefox/addon/twitch-chess-move-filter/?utm_source=addons.mozilla.org&utm_medium=referral&utm_content=search)
 
 ### Build it yourself from GitHub (Chrome and Firefox)
 
