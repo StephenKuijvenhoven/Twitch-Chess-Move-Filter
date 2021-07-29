@@ -2,7 +2,7 @@
   "manifest_version": 2,
 
   "name": "Twitch Chess move filter",
-  "version": "0.3",
+  "version": "0.3.1",
   "description": "Hides chess moves and terms from Twitch chat",
   "browser_action": {
     "default_popup": "options/options.html"

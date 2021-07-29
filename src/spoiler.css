@@ -1,9 +1,9 @@
-.chessspoiler {
+.chess-spoiler {
     position: relative;
     display: inline-block;
   }
   
-.chessspoiler .chessspoilertext {
+.chess-spoiler .chess-spoiler-text {
     visibility: hidden;
     width: 60px;
     background-color: black;
@@ -19,6 +19,6 @@
     left: 100%;
     margin-left: -60px;
   }
-.chessspoiler:hover .chessspoilertext {
+.chess-spoiler:hover .chess-spoiler-text {
     visibility: visible;
   }
