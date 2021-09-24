@@ -1,0 +1,25 @@
+{   
+    "en-US": {
+        "short": "KQNBRkqnbr",
+        "full": "king|queens?|rooks?|bishops?|knights?|horses?|pawns?|",
+        "terms": "checks?|checkmate|mate|pins?|forks?|skewer|zugzwang|push|takes?|diagonals?|blunders?|castle"
+        },
+
+    "nl-NL":{
+        "short": "KDTLPkdtlp",
+        "full": "koning|dame|toren|loper|paard|pion|",
+        "terms":"schaak|schaakmat|mat|penning|vork|dubbele aanval|röntgenaanval|slaan|diagonaal|blunder|rokade"
+        },
+
+    "ru-RU":{
+        "short": "КФЛСКкфлск",
+        "full": "король|ферзь|ладья|слон|конь",
+        "terms":"шах|шахматы|мат|Вилка|Рокировка|Зевок|Капкан|Линейный|Мельница|Освобождение|Отвлечение|Перегрузка|Рентген|Цугцванг"
+    },
+
+    "hi-IN": {
+        "short": "RVHOGrvhog",
+        "full": "राजा|वज़ीर|हाथी|ऊँट|घोड़ा|प्यादा|",
+        "terms":"शाह|शाहमात|कैसलिंग|एक्स-रे|कांटा"
+    }
+}
