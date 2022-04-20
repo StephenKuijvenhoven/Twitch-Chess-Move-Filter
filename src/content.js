@@ -1,6 +1,29 @@
+const TWITCH_URL = "https://www.twitch.tv/"
+const LICHESS_URL = "https://lichess.org/"
+const YOUTUBE_URL = "https://www.youtube.com/"
 
-// Get the Twitch chat HTML element
-const chat = document.getElementsByClassName('chat-scrollable-area__message-container');
+const TWITCH_CHAT = 'chat-scrollable-area__message-container'
+const LICHESS_CHAT = 'mchat__messages'
+const YOUTUBE_CHAT = '' //TODO
+
+
+const currentSite = window.location.toString();
+
+var chat;
+
+if(currentSite.includes(TWITCH_URL)){
+  this.findMessage = (mutation) => findMessageTW(mutation);
+  this.filterMessage = (mutation, newMessage) => filterMessageTW(mutation, newMessage);
+  chat = document.getElementsByClassName(TWITCH_CHAT);
+}
+if(currentSite.includes(LICHESS_URL)){
+  this.findMessage = (mutation) => findMessageLC(mutation);
+  this.filterMessage = (mutation, newMessage) => filterMessageLC(mutation, newMessage);
+  chat = document.getElementsByClassName(LICHESS_CHAT);
+}
+if(currentSite.includes(YOUTUBE_URL)){
+  //TODO
+}
 
 // Regular expression for the English Algebraic notation of chess
 var regexMoves = new RegExp(/((?:(?:O-O[-O]?)|(?:[KQNBRkqnbr][a-h]?x?[a-h]x?[1-8])|(?:[a-hA-H]x?[a-hA-H]?[1-8]))\+?)\#?/g, 'gi')
@@ -28,17 +51,11 @@ function addObserverIfDesiredNodeAvailable() {
 const callback = function(mutationsList, observer) {
   Array.from(mutationsList).forEach(mutation =>{
     checkSettings();
-      if (mutation.type === 'childList') {
-        if(mutation.target.getElementsByClassName('text-fragment').length !=0){
-          var newestMessage = mutation.target.getElementsByClassName('text-fragment')[mutation.target.getElementsByClassName('text-fragment').length-1].innerHTML
-          if(!newestMessage.includes('<a class="chess-spoiler">')){
-            if(selectedRegEx!= null){ 
-              mutation.target.getElementsByClassName('text-fragment')[mutation.target.getElementsByClassName('text-fragment').length-1].innerHTML = newestMessage.replace(selectedRegEx, function(message){
-              return spoiler(message);
-            })
-          }
-        }}
-      }
+    console.log("callback test")
+    newestMessage = findMessage(mutation);
+    if(!newestMessage.includes('<a class="chess-spoiler">')){
+      filterMessage(mutation, newestMessage)
+    }
   })
 };
 
@@ -46,7 +63,7 @@ const observer = new MutationObserver(callback);
 
 // The spoiler message that will replace the chess move
 const spoiler = (message)=>  {
-  return '<a class="chess-spoiler">[♞ spoiler] <span class="chess-spoiler-text"> ' + message + '</span></a>'
+  return '<a class="chess-spoiler">[♞ spoiler]<span class="chess-spoiler-text"> ' + message + '</span></a>'
 }
 
 addObserverIfDesiredNodeAvailable();
